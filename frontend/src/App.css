@@ -11,8 +11,9 @@ h6 {
 }
 
 hr.line {
-  border: 1px solid #313131;
+  border: 1px solid white;
   width: 175px;
+  margin-left: 41%;
 }
 
 .app {
@@ -46,7 +47,7 @@ hr.line {
 }
 
 .message-container {
-  height: 400px;
+  height: 500px;
   background-color: white;
   overflow: auto;
   border-radius: 5px;
@@ -73,4 +74,5 @@ hr.line {
   font-size: small;
   margin-bottom: 3px;
   margin-right: 5px;
+  color: black;
 }
