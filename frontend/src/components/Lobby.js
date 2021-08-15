@@ -8,16 +8,23 @@ const Lobby = ({joinRoom}) => {
   return <Form className="lobby"
     onSubmit={e => {
       e.preventDefault();
+      console.log('user is', user)
+      localStorage.setItem('username', user)
       joinRoom(user,room)
     }}
   >
     <Form.Group>
-      <Form.Control placeholder = 'name' onChange={e => setUser(e.target.value)} />
-      <Form.Control placeholder='room' onChange={e => setRoom(e.target.value)} />
+      <Form.Control placeholder = 'Username' onChange={e => setUser(e.target.value) }
+ />
+      <Form.Control placeholder='Room' onChange={e => setRoom(e.target.value)} />
     </Form.Group>
     <Button variant='success' type='submit' disabled={ !user || !room}>Join</Button>
-    
+
   </Form>
 }
+
+<script>
+
+</script>
 
 export default Lobby;

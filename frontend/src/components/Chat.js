@@ -3,15 +3,17 @@ import SendMessageForm from './SendMessageForm'
 import { Button } from 'react-bootstrap'
 import ConnectedUsers from './ConnectedUsers'
 
-const Chat = ({ messages, sendMessage, closeConnection, users }) => <div>
+const user = localStorage.getItem('username')
+const Chat = ({ messages, sMessage, closeConnection, users }) => <div>
   <div className='leave-room'>
     <Button variant='danger' onClick={()=> closeConnection()}>Leave Room</Button>
   </div>
-  <ConnectedUsers users={users}/>
+
+  <ConnectedUsers users={users} username= {user}/>
 
   <div className='chat'>
-    <MessageContainer messages={ messages } />
-    <SendMessageForm sendMessage={ sendMessage } />
+    <MessageContainer messages={messages} username={user} />
+    <SendMessageForm s={ sMessage } />
    </div>
   </div>
 

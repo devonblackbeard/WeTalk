@@ -32,6 +32,7 @@ const App = () => {
         setUsers(users);
       })
 
+      console.log('join')
       await connection.start();
       await connection.invoke("JoinRoom", {user,room})
       setConnection(connection)
@@ -44,8 +45,9 @@ const App = () => {
   const closeConnection = async () => {
     try {
       await connection.stop();
+      localStorage.removeItem('username')
     } catch (error) {
-        console.log(error)
+      console.log(error)
     }
   }
 
@@ -58,13 +60,14 @@ const App = () => {
   }
 
   return <div className='app'>
-    <h1 style={{color:'white'}}>WeTalk</h1>
+    <h1 style={{color:'white'}}>HelpDesk</h1>
     <hr className='line'/>
     { !connection
       ? <Lobby joinRoom={ joinRoom }/>
-      : <Chat messages= { messages } sendMessage={ sendMessage }
+      : <Chat messages= { messages } sMessage ={ sendMessage }
         closeConnection={ closeConnection } users={users}
-      /> }
+      />
+    }
     </div>
   }
 
