@@ -44,15 +44,12 @@ const App = () => {
   const closeConnection = async () => {
     try {
       await connection.stop();
-      localStorage.removeItem('sessionInfo')
     } catch (error) {
       console.log(error)
     }
   }
 
   const getUsernameFromConnection = async () => {
-    console.log('In get username');
-
     // key is connection Id
     // value is Room and Username
     const connectionInfo = await connection.invoke("GetUsername", connection.connectionId)

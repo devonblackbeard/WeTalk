@@ -8,7 +8,6 @@ const Lobby = ({joinRoom}) => {
   return <Form className="lobby"
     onSubmit={e => {
       e.preventDefault();
-
       joinRoom(user,room)
     }}
   >
