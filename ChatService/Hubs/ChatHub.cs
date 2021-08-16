@@ -12,7 +12,7 @@ namespace ChatService.Hubs
         private readonly IDictionary<string, UserConnection> _connections;
         public ChatHub(IDictionary<string, UserConnection> connections)
         {
-            _botUser = "WeTalk Bot";
+            _botUser = "Chat Bot";
             _connections = connections;
         }
         public async Task JoinRoom(UserConnection userConnection)
@@ -32,6 +32,12 @@ namespace ChatService.Hubs
             {
                 await Clients.Group(userConnection.Room).SendAsync("ReceiveMessage", userConnection.User, message);
             }       
+        }
+
+        public KeyValuePair<string, UserConnection> GetUsername(string connectionId)
+        {
+            var user = _connections.FirstOrDefault(c => c.Key == connectionId);
+            return user;
         }
 
         public override Task OnDisconnectedAsync(Exception exception)

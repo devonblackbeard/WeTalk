@@ -7,7 +7,6 @@ C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\bin\Debug\net5.
 C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\bin\Debug\net5.0\ChatService.dll
 C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\bin\Debug\net5.0\ref\ChatService.dll
 C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\bin\Debug\net5.0\ChatService.pdb
-C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\obj\Debug\net5.0\ChatService.csproj.AssemblyReference.cache
 C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\obj\Debug\net5.0\ChatService.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\obj\Debug\net5.0\ChatService.AssemblyInfoInputs.cache
 C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\obj\Debug\net5.0\ChatService.AssemblyInfo.cs
@@ -21,3 +20,4 @@ C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\obj\Debug\net5.
 C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\obj\Debug\net5.0\ref\ChatService.dll
 C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\obj\Debug\net5.0\ChatService.pdb
 C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\obj\Debug\net5.0\ChatService.genruntimeconfig.cache
+C:\Users\devon\OneDrive\Documents\GitHub\ChatService\ChatService\obj\Debug\net5.0\ChatService.csproj.AssemblyReference.cache

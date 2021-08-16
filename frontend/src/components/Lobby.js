@@ -8,8 +8,7 @@ const Lobby = ({joinRoom}) => {
   return <Form className="lobby"
     onSubmit={e => {
       e.preventDefault();
-      console.log('user is', user)
-      localStorage.setItem('username', user)
+
       joinRoom(user,room)
     }}
   >

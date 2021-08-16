@@ -1,11 +1,14 @@
 import { useEffect, useRef } from "react"
 
-const MessageContainer = ({ messages, username }) => {
+const MessageContainer = ({ messages, getUsernameFromConnection }) => {
   const messageRef = useRef();
- // const currentUser = localStorage.getItem('username')
-console.log('username', username);
+  const inputRef = useRef(null);
 
   useEffect(() => {
+    const getData= async ()=> {
+      inputRef.current = await getUsernameFromConnection()
+    }
+    getData()
     if(messageRef && messageRef.current){
       const { scrollHeight, clientHeight } = messageRef.current;
       messageRef.current.scrollTo({left:0, top: scrollHeight - clientHeight,
@@ -16,13 +19,14 @@ console.log('username', username);
 
   return <div ref={messageRef} className='message-container'>
     {
-    messages.map((m, index) =>
-      <div key={index} className='user-message'>
-        <div className='message bg-primary'> { m.message }</div>
-        <div className='from-user' >{ m.user === username ? 'You': m.user }</div>
-      </div>
+      messages.map((m, index) =>
+        <div key={index} className='user-message'>
+          <div className='message bg-primary'> { m.message }</div>
+          <div className='from-user' >{ m.user.toString() === inputRef.current ? 'You': m.user }</div>
+        </div>
     )}
   </div>
 }
+
 
 export default MessageContainer

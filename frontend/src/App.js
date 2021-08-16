@@ -32,7 +32,6 @@ const App = () => {
         setUsers(users);
       })
 
-      console.log('join')
       await connection.start();
       await connection.invoke("JoinRoom", {user,room})
       setConnection(connection)
@@ -45,10 +44,19 @@ const App = () => {
   const closeConnection = async () => {
     try {
       await connection.stop();
-      localStorage.removeItem('username')
+      localStorage.removeItem('sessionInfo')
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const getUsernameFromConnection = async () => {
+    console.log('In get username');
+
+    // key is connection Id
+    // value is Room and Username
+    const connectionInfo = await connection.invoke("GetUsername", connection.connectionId)
+    return connectionInfo.value.user
   }
 
   const sendMessage = async (message) => {
@@ -62,10 +70,11 @@ const App = () => {
   return <div className='app'>
     <h1 style={{color:'white'}}>HelpDesk</h1>
     <hr className='line'/>
-    { !connection
+    {
+      !connection
       ? <Lobby joinRoom={ joinRoom }/>
-      : <Chat messages= { messages } sMessage ={ sendMessage }
-        closeConnection={ closeConnection } users={users}
+      : <Chat messages= { messages } sendMessage ={ sendMessage }
+        closeConnection={ closeConnection } users={users} getUsernameFromConnection={getUsernameFromConnection}
       />
     }
     </div>
