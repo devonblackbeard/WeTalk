@@ -70,12 +70,11 @@ const App = () => {
     {
       !connection
       ? <Lobby joinRoom={ joinRoom }/>
-      : <Chat messages= { messages } sendMessage ={ sendMessage }
-        closeConnection={ closeConnection } users={users} getUsernameFromConnection={getUsernameFromConnection}
+      : <Chat messages= { messages } sendMessage = { sendMessage }
+        closeConnection={ closeConnection } users= {users} getUsernameFromConnection={getUsernameFromConnection}
       />
     }
     </div>
   }
-
 
 export default App;

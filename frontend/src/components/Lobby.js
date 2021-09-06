@@ -13,7 +13,7 @@ const Lobby = ({joinRoom}) => {
   >
     <Form.Group>
       <Form.Control placeholder = 'Username' onChange={e => setUser(e.target.value) }
- />
+      />
       <Form.Control placeholder='Room' onChange={e => setRoom(e.target.value)} />
     </Form.Group>
     <Button variant='success' type='submit' disabled={ !user || !room}>Join</Button>
@@ -22,7 +22,6 @@ const Lobby = ({joinRoom}) => {
 }
 
 <script>
-
 </script>
 
 export default Lobby;

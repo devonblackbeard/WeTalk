@@ -4,6 +4,7 @@ const ConnectedUsers = ({users, username}) => <div className='user-list'>
 </div>
 
 const mapUsers = (userList, username)=>{
+ // console.log(username())
   return userList.map((u, idx)=> <h6 key={idx}>{u === username ? `${u} (You)`: u}</h6>)
 }
 

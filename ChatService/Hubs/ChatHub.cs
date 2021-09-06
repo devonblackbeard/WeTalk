@@ -31,7 +31,7 @@ namespace ChatService.Hubs
             if(_connections.TryGetValue(Context.ConnectionId, out UserConnection userConnection))
             {
                 await Clients.Group(userConnection.Room).SendAsync("ReceiveMessage", userConnection.User, message);
-            }       
+            }
         }
 
         public KeyValuePair<string, UserConnection> GetUsername(string connectionId)

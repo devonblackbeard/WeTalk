@@ -8,7 +8,7 @@ const Chat = ({ messages, sendMessage, closeConnection, users, getUsernameFromCo
     <Button variant='danger' onClick={()=> closeConnection()}>Leave Room</Button>
   </div>
 
-  <ConnectedUsers users={users} />
+  <ConnectedUsers users={users} username={ getUsernameFromConnection } />
 
   <div className='chat'>
     <MessageContainer messages={messages} getUsernameFromConnection={getUsernameFromConnection} />
