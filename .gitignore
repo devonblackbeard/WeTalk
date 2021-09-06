@@ -1,6 +1,9 @@
 .vscode/*
 /.vs
-node_modules/
 *.pdb
 *.dll
 *.cache
+node_modules
+.DS_Store
+package-lock.json
+.gitignore
