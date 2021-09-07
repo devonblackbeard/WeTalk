@@ -3,16 +3,17 @@ import { useState } from 'react'
 
 
 const ConnectedUsers = ({users, username}) => {
-  const myName = useRef(null)
+ // const myName = useRef(null)
 
-  username().then((nameHere)=> {
-    console.log('name is ', nameHere)
-    myName.current = nameHere
-  })
+  // username().then((nameHere)=> {
+  //   console.log('name is ', nameHere)
+  //   myName.current = nameHere
+  // })
+  console.log('username is ', username)
 
   return <div className='user-list'>
   <h4 className="participants">Participants</h4>
-  {mapUsers(users, myName.current)}
+  {mapUsers(users, username)}
   </div>
 }
 const mapUsers = (userList, username) => {
